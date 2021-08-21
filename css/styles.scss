@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oxygen", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaeaea;
+
+  .rotate {
+    transform: rotate(360deg);
+    transition: 1s ease-out;
+  }
+
+  #app {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    padding: 4rem;
+    text-align: center;
+    width: 50rem;
+    border-radius: 10px;
+    background: linear-gradient(
+      349deg,
+      rgba(49, 87, 44, 1) 46%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    #refresh {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      opacity: 0.6;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 1;
+        transition: 0.5s;
+      }
+    }
+
+    #therm-icon {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+
+    #error-div {
+      background-color: #6a040f;
+      color: white;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: 2px solid white;
+      border-radius: 10px;
+      display: none;
+    }
+
+    h1 {
+      padding-bottom: 2rem;
+      color: white;
+      letter-spacing: 0.5px;
+    }
+
+    .wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      .input-group {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+
+        #convert-symbol {
+          align-self: center;
+        }
+
+        .form-input {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+
+          span {
+            color: white;
+            margin-bottom: 0.2rem;
+          }
+
+          select {
+            margin-bottom: 0.4rem;
+          }
+
+          input {
+            margin: 0.3rem;
+            padding: 1rem;
+            border: 1px solid white;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: 80%;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            text-align: center;
+
+            &::placeholder {
+              font-size: 1rem;
+            }
+
+            &:disabled {
+              background-color: white;
+            }
+          }
+
+          #to-unit {
+            background-color: white;
+            color: grey;
+            margin: 0.3rem;
+            padding: 1rem;
+            border: 1px solid white;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: 80%;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          }
+        }
+      }
+
+      #convert {
+        width: 30%;
+        padding: 0.8rem;
+        margin-top: 2rem;
+        border: 1px solid white;
+        font-size: 1.1rem;
+        color: white;
+        background-color: rgba(0, 0, 0, 1);
+        border-radius: 5px;
+
+        &:hover {
+          cursor: pointer;
+          background-color: rgba(0, 0, 0, 0.8);
+
+          transform: scale(1.1);
+          transition: 0.5s ease-in-out;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 802px) {
+    #app {
+      width: 95%;
+      padding: 4rem 1rem;
+      margin-top: 2rem;
+
+      .wrap {
+        flex-direction: column;
+        width: 100%;
+
+        .input-group {
+          flex-direction: column;
+          width: 100%;
+
+          #convert-symbol {
+            margin: 2rem 0;
+          }
+
+          .form-input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+
+            input {
+              width: 70%;
+            }
+
+            #to-unit {
+              width: 70%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 525px) {
+    #app {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      #therm-icon {
+        width: 30px;
+      }
+
+      .wrap {
+        .form-input {
+          input {
+            width: 100%;
+          }
+
+          #to-unit {
+            width: 100%;
+            padding: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
